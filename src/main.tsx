@@ -533,6 +533,7 @@ function App() {
               <tr>
                 <Header label="#" sortKey="rank" sort={sort} onSort={setSortKey} />
                 <Header label="Player" sortKey="name" sort={sort} onSort={setSortKey} />
+                <th>Draft</th>
                 <Header label="Pos" sortKey="pos" sort={sort} onSort={setSortKey} />
                 <Header label="Team" sortKey="team" sort={sort} onSort={setSortKey} />
                 <Header label="Value" sortKey="total" sort={sort} onSort={setSortKey} />
@@ -541,7 +542,6 @@ function App() {
                 {countCategories.map((category) => (
                   <Header key={category} label={category} sortKey={category} sort={sort} onSort={setSortKey} />
                 ))}
-                <th>Draft</th>
               </tr>
             </thead>
             <tbody>
@@ -557,14 +557,6 @@ function App() {
                       </span>
                     </div>
                   </td>
-                  <td>{player.pos}</td>
-                  <td>{player.team}</td>
-                  <td className="value">{formatNumber(player.total, 2)}</td>
-                  <Score value={player.scores["FG%"]} />
-                  <Score value={player.scores["FT%"]} />
-                  {countCategories.map((category) => (
-                    <Score key={category} value={player.scores[category]} />
-                  ))}
                   <td>
                     <div className="draft-actions">
                       <button type="button" onClick={() => updateStatus(player.id, "mine")}>
@@ -580,6 +572,14 @@ function App() {
                       )}
                     </div>
                   </td>
+                  <td>{player.pos}</td>
+                  <td>{player.team}</td>
+                  <td className="value">{formatNumber(player.total, 2)}</td>
+                  <Score value={player.scores["FG%"]} />
+                  <Score value={player.scores["FT%"]} />
+                  {countCategories.map((category) => (
+                    <Score key={category} value={player.scores[category]} />
+                  ))}
                 </tr>
               ))}
             </tbody>

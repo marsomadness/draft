@@ -341,7 +341,7 @@ tr.drafted {
 .draft-actions {
   display: flex;
   gap: 6px;
-  min-width: 156px;
+  min-width: 132px;
 }
 
 .draft-actions button {
@@ -352,7 +352,7 @@ tr.drafted {
   font-size: 12px;
   font-weight: 850;
   min-height: 31px;
-  padding: 0 9px;
+  padding: 0 8px;
 }
 
 .draft-actions .ghost {
